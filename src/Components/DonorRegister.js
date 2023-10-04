@@ -12,7 +12,7 @@ const DonorRegister = () => {
 
   const handleSubmit = async(e)=>{
     e.preventDefault()
-    const {data} = await axios.post('http://localhost:4000/api/v1/createdonor',{
+    const {data} = await axios.post('http://3.110.108.103:4000/api/v1/createdonor',{
       email:emailRef.current.value,
       password:passRef.current.value,
       username:nameRef.current.value,

@@ -19,7 +19,7 @@ const RecipientPage = () => {
   
   const fetchDonors = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/getdonor1/${selectedCity}`);
+      const response = await axios.get(`http://3.110.108.103:4000/api/v1/getdonor1/${selectedCity}`);
       
       if (response.data.success) {
         setFilteredResults(response.data.data);
@@ -35,7 +35,7 @@ const RecipientPage = () => {
 
   const fetchDonors1 = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/getdonor12/${user.username}`);
+      const response = await axios.get(`http://3.110.108.103:4000/api/v1/getdonor12/${user.username}`);
       
       if (response.data.success) {
         setFilteredResults1(response.data.data);
@@ -63,7 +63,7 @@ const RecipientPage = () => {
       },
     };
     const { data } = await axios.post(
-      "http://localhost:4000/api/v1/getrecipient",
+      "http://3.110.108.103:4000/api/v1/getrecipient",
       "",
       config
     );
@@ -96,7 +96,7 @@ const RecipientPage = () => {
     try {
       console.log(commentData);
       // Send a POST request to store comment in the comment model
-      const response = await axios.post("http://localhost:4000/api/v1/uploadcomment1", commentData);
+      const response = await axios.post("http://3.110.108.103:4000/api/v1/uploadcomment1", commentData);
   
       if (response.data.success) {
         // Handle successful comment submission, e.g., remove the donor from the list

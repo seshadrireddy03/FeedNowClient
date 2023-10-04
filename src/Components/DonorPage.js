@@ -30,7 +30,7 @@ const Donor = () => {
     for (let pair of formdata.entries()) {
       console.log(pair[0]+ ', ' + pair[1]); 
   }
-    const {data} = await axios.post('http://localhost:4000/api/v1/upload',formdata, {
+    const {data} = await axios.post('http://3.110.108.103:4000/api/v1/upload',formdata, {
       headers: {
         'Content-Type': 'application/json',
       }
@@ -44,7 +44,7 @@ const Donor = () => {
 
   const fetchDonors1 = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/api/v1/getdonor00/${user.username}`);
+      const response = await axios.get(`http://3.110.108.103:4000/api/v1/getdonor00/${user.username}`);
       
       if (response.data.success) {
         setFilteredResults1(response.data.data);
@@ -65,7 +65,7 @@ const Donor = () => {
         "auth-token":localStorage.getItem('token')
       }
     }
-    const {data} = await axios.post('http://localhost:4000/api/v1/getdonor','',config)
+    const {data} = await axios.post('http://3.110.108.103:4000/api/v1/getdonor','',config)
     setuser(data)
 
   }
